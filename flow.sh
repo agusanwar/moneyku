@@ -16,5 +16,5 @@
 
 3. Installing dependencies
     - theme color / google font
-    - 
-
+    - carousel slider
+    - lottie animation
