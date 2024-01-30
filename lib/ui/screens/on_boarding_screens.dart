@@ -4,6 +4,7 @@ import 'package:lottie/lottie.dart';
 import 'package:moneyku/shared/shared_themes.dart';
 import 'package:moneyku/ui/screens/sign_in_screens.dart';
 import 'package:moneyku/ui/screens/sign_up_screens.dart';
+import 'package:moneyku/ui/widgets/buttons.dart';
 
 class OnBoardingScreens extends StatefulWidget {
   const OnBoardingScreens({super.key});
@@ -122,7 +123,7 @@ class _OnBoardingScreensState extends State<OnBoardingScreens> {
                 margin: const EdgeInsets.only(right: 10),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: currentIndex == 0 ? kBlueDarkColor : kGrayColor,
+                  color: currentIndex == 0 ? kOrangeColor : kGrayColor,
                 ),
               ),
               Container(
@@ -131,7 +132,7 @@ class _OnBoardingScreensState extends State<OnBoardingScreens> {
                 margin: const EdgeInsets.only(right: 10),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: currentIndex == 1 ? kBlueDarkColor : kGrayColor,
+                  color: currentIndex == 1 ? kOrangeColor : kGrayColor,
                 ),
               ),
               Container(
@@ -140,7 +141,7 @@ class _OnBoardingScreensState extends State<OnBoardingScreens> {
                 margin: const EdgeInsets.only(right: 10),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: currentIndex == 2 ? kBlueDarkColor : kGrayColor,
+                  color: currentIndex == 2 ? kOrangeColor : kGrayColor,
                 ),
               ),
             ],
@@ -148,86 +149,41 @@ class _OnBoardingScreensState extends State<OnBoardingScreens> {
           currentIndex == 2
               ? Column(
                   children: [
-                    Container(
-                      margin: const EdgeInsets.only(top: 30),
+                    CustomFilledButton(
                       width: MediaQuery.of(context).size.width * 0.8,
-                      height: 50,
-                      child: TextButton(
-                        style: TextButton.styleFrom(
-                          backgroundColor: kBlueDarkColor,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadiusDirectional.circular(50),
+                      title: 'Get Started',
+                      color: kOrangeColor,
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SignUpScreens(),
                           ),
-                        ),
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const SignUpScreens(),
-                            ),
-                          );
-                        },
-                        child: Text(
-                          'Get Started',
-                          style: whiteTextStyle.copyWith(
-                            fontSize: 18,
-                            fontWeight: semiBold,
-                          ),
-                        ),
-                      ),
+                        );
+                      },
                     ),
-                    Container(
-                      margin: const EdgeInsets.only(top: 10),
+                    CustomFilledButton(
                       width: MediaQuery.of(context).size.width * 0.8,
-                      height: 50,
-                      child: TextButton(
-                        style: TextButton.styleFrom(
-                          backgroundColor: kWhiteColor,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadiusDirectional.circular(50),
+                      title: "Sign In",
+                      color: kWhiteColor,
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SignInScreens(),
                           ),
-                        ),
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const SignInScreens(),
-                            ),
-                          );
-                        },
-                        child: Text(
-                          'Sign In',
-                          style: blackTextStyle.copyWith(
-                            fontSize: 18,
-                            fontWeight: semiBold,
-                          ),
-                        ),
-                      ),
+                        );
+                      },
                     ),
                   ],
                 )
-              : Container(
-                  margin: const EdgeInsets.only(top: 30),
+              : CustomFilledButton(
                   width: MediaQuery.of(context).size.width * 0.8,
-                  height: 50,
-                  child: TextButton(
-                    style: TextButton.styleFrom(
-                      backgroundColor: kBlueDarkColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadiusDirectional.circular(50),
-                      ),
-                    ),
-                    onPressed: () {
-                      carouselController.nextPage();
-                    },
-                    child: Text(
-                      'Next',
-                      style: whiteTextStyle.copyWith(
-                        fontSize: 18,
-                        fontWeight: semiBold,
-                      ),
-                    ),
-                  ),
+                  title: 'Next',
+                  color: kOrangeColor,
+                  onPressed: () {
+                    carouselController.nextPage();
+                  },
                 ),
         ],
       ),

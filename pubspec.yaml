@@ -21,6 +21,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   # google_font
   google_fonts: ^6.0.1
+    # flutter charts
+  fl_chart: ^0.60.0  
   #lottie
   lottie: ^2.7.0
 

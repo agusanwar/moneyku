@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:moneyku/ui/screens/on_boarding_screens.dart';
+import 'package:moneyku/ui/screens/pages_navigation/main_screens.dart';
 import 'package:moneyku/ui/screens/sign_in_screens.dart';
 import 'package:moneyku/ui/screens/sign_up_screens.dart';
 import 'package:moneyku/ui/screens/splash_screens.dart';
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
         '/on-boarding': (context) => const OnBoardingScreens(),
         '/sign-up': (context) => const SignUpScreens(),
         '/sign-in': (context) => const SignInScreens(),
+        '/home': (context) => const MainScreens(),
       },
     );
   }

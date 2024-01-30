@@ -21,7 +21,7 @@ Color kRedColor = const Color(0xffFF2566);
 Color kGreenColor = const Color(0xff22B07D);
 Color kYellowColor = const Color(0xffFFDF34);
 Color kYellowDarkColor = const Color(0xffFBB600);
-Color kOrangeColor = const Color(0xffFFA234);
+Color kOrangeColor = const Color(0xffF87000);
 Color kOrangeSoftColor = const Color(0xffF94B01);
 
 TextStyle blackTextStyle = GoogleFonts.poppins(color: kBlackColor);

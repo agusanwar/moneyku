@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:moneyku/shared/shared_themes.dart';
+import 'package:moneyku/ui/widgets/buttons.dart';
+import 'package:moneyku/ui/widgets/forms_field.dart';
 
 class SignUpScreens extends StatelessWidget {
   const SignUpScreens({super.key});
@@ -56,115 +58,37 @@ class SignUpScreens extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // Username Input
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Username',
-                      style: blackTextStyle.copyWith(
-                        fontWeight: medium,
-                      ),
-                    ),
-                    const SizedBox(height: 8),
-                    TextFormField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        contentPadding: const EdgeInsets.all(12),
-                      ),
-                    ),
-                  ],
+                const CustomFormField(
+                  title: 'Username',
                 ),
                 const SizedBox(height: 10),
                 // Email Input
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Email Address',
-                      style: blackTextStyle.copyWith(
-                        fontWeight: medium,
-                      ),
-                    ),
-                    const SizedBox(height: 8),
-                    TextFormField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        contentPadding: const EdgeInsets.all(12),
-                      ),
-                    ),
-                  ],
+                const CustomFormField(
+                  title: 'Email',
                 ),
                 const SizedBox(height: 10),
                 // Password Input
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Password',
-                      style: blackTextStyle.copyWith(
-                        fontWeight: medium,
-                      ),
-                    ),
-                    const SizedBox(height: 8),
-                    TextFormField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        contentPadding: const EdgeInsets.all(12),
-                      ),
-                    ),
-                  ],
+                const CustomFormField(
+                  title: 'Password',
+                  obsecureText: true,
                 ),
-                // Button Sign Up
-                Container(
-                  margin: const EdgeInsets.only(top: 30),
-                  width: MediaQuery.of(context).size.width * 0.8,
-                  height: 50,
-                  child: TextButton(
-                    style: TextButton.styleFrom(
-                      backgroundColor: kBlueDarkColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadiusDirectional.circular(50),
-                      ),
-                    ),
-                    onPressed: () {},
-                    child: Text(
-                      'Sign Up',
-                      style: whiteTextStyle.copyWith(
-                        fontSize: 18,
-                        fontWeight: semiBold,
-                      ),
-                    ),
-                  ),
+                const SizedBox(height: 20),
+                // Button Sign in
+                CustomFilledButton(
+                  title: 'Sign Up',
+                  color: kOrangeColor,
+                  onPressed: () {
+                    Navigator.pushNamedAndRemoveUntil(
+                        context, '/home', (route) => false);
+                  },
                 ),
-                Container(
-                  margin: const EdgeInsets.only(top: 20),
-                  width: MediaQuery.of(context).size.width * 0.8,
-                  height: 50,
-                  child: TextButton(
-                    style: TextButton.styleFrom(
-                      backgroundColor: kLightBackgraundColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadiusDirectional.circular(50),
-                      ),
-                    ),
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/sign-in');
-                    },
-                    child: Text(
-                      'Sign In',
-                      style: blackTextStyle.copyWith(
-                        fontSize: 18,
-                        fontWeight: semiBold,
-                      ),
-                    ),
-                  ),
-                ),
+                CustomTextButton(
+                  title: 'Sign In',
+                  color: kLightBackgraundColor,
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/sign-in');
+                  },
+                )
               ],
             ),
           ),
