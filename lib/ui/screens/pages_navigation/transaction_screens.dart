@@ -40,16 +40,9 @@ class _TransactionScreensState extends State<TransactionScreens>
     return Scaffold(
       backgroundColor: kLightBackgraundColor,
       appBar: AppBar(
-        backgroundColor: kOrangeColor,
-        elevation: 0,
-        title: Text(
+        title: const Text(
           'Transaction History',
-          style: whiteTextStyle.copyWith(
-            fontSize: 18,
-            fontWeight: semiBold,
-          ),
         ),
-        centerTitle: true,
       ),
       body: Column(
         children: [

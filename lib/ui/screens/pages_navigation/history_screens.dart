@@ -51,16 +51,9 @@ class _HistoryScreensState extends State<HistoryScreens> {
     return Scaffold(
       backgroundColor: kLightBackgraundColor,
       appBar: AppBar(
-        backgroundColor: kOrangeColor,
-        elevation: 0,
-        title: Text(
+        title: const Text(
           'Statistic History',
-          style: whiteTextStyle.copyWith(
-            fontSize: 18,
-            fontWeight: semiBold,
-          ),
         ),
-        centerTitle: true,
       ),
       body: ListView(
         scrollDirection: Axis.vertical,

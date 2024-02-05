@@ -15,16 +15,22 @@ dependencies:
   flutter:
     sdk: flutter
 
-
+  # flashbar 
+  another_flushbar: ^1.12.30
   # carousel_slider
   carousel_slider: ^4.2.1
   cupertino_icons: ^1.0.2
   # google_font
   google_fonts: ^6.0.1
-    # flutter charts
+  # intl formating number
+  intl: ^0.19.0
+  # flutter charts
   fl_chart: ^0.60.0  
   #lottie
   lottie: ^2.7.0
+  # url launcer
+  url_launcher: ^6.2.4
+ 
 
 dev_dependencies:
   flutter_test:

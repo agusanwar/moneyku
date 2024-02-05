@@ -9,7 +9,6 @@ class SignInScreens extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kLightBackgraundColor,
       body: ListView(
         scrollDirection: Axis.vertical,
         padding: const EdgeInsets.symmetric(horizontal: 20),

@@ -33,7 +33,6 @@ class _OnBoardingScreensState extends State<OnBoardingScreens> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kLightBackgraundColor,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

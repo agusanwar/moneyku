@@ -6,7 +6,7 @@ class CustomFormField extends StatelessWidget {
   final bool obsecureText;
   final TextEditingController? controller;
   final TextInputType? keyboardType;
-  // final bool isShowTile;
+  final bool isShowTile;
   // final Function(String)? onFieldSubmitted;
   const CustomFormField({
     super.key,
@@ -14,7 +14,7 @@ class CustomFormField extends StatelessWidget {
     this.controller,
     this.obsecureText = false,
     this.keyboardType,
-    // this.isShowTile = true,
+    this.isShowTile = true,
     // this.onFieldSubmitted,
   });
 
@@ -24,18 +24,32 @@ class CustomFormField extends StatelessWidget {
         Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          title,
-          style: blackTextStyle.copyWith(
-            fontWeight: medium,
+        if (isShowTile)
+          Text(
+            title,
+            style: blackTextStyle.copyWith(
+              fontWeight: medium,
+            ),
           ),
-        ),
+        if (isShowTile) const SizedBox(height: 8),
         const SizedBox(height: 8),
         TextFormField(
           obscureText: obsecureText,
           keyboardType: keyboardType,
           controller: controller,
           decoration: InputDecoration(
+            prefixIcon: !isShowTile
+                ? Icon(
+                    Icons.search,
+                    color: kGrayColor,
+                    size: 25,
+                  )
+                : null,
+            hintText: !isShowTile ? title : null,
+            hintStyle: blackTextStyle.copyWith(
+              fontSize: 13,
+              fontWeight: regular,
+            ),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(20),
             ),

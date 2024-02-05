@@ -158,12 +158,18 @@ class _HomeScreensState extends State<HomeScreens> {
                               color: kGreenColor,
                               imageUrl: 'assets/icons/ic_transaction_top.png',
                               title: 'topup',
+                              onTap: () {
+                                Navigator.pushNamed(context, '/top-up');
+                              },
                             ),
                             HomeCardItemServices(
                               color: kRedColor,
                               imageUrl:
                                   'assets/icons/ic_transaction_transfer.png',
                               title: 'Send',
+                              onTap: () {
+                                Navigator.pushNamed(context, '/transfer');
+                              },
                             ),
                             HomeCardItemServices(
                               color: kPurpleColor,
